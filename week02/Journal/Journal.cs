@@ -22,7 +22,7 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                writer.WriteLine($"{entry._date}|{entry._promptText}|{entry._entryText");
+                writer.WriteLine($"{entry._date}|{entry._promptText}|{entry._entryText}");
             }
         }
     }
@@ -30,15 +30,20 @@ public class Journal
     public void LoadFromFile(string file)
     {
         _entries.Clear();
-        string[] parts = LinkedList.Split('|');
-        Entry loadedEntry = new Entry
+
+        string[] lines = File.ReadAllLines(file);
+        foreach (string line in lines)
         {
-            _date = parts[0],
-            _promptsText = parts[1],
-            _entryText = parts[2]
-        };
-        _entries.Add(loadedEntry);
-    }        
+            string[] parts = line.Split('|');
+            Entry loadedEntry = new Entry
+            {
+                _date = parts[0],
+                _promptText = parts[1],
+                _entryText = parts[2]
+            };
+            _entries.Add(loadedEntry);
+        }
+    }       
     
 
 }
