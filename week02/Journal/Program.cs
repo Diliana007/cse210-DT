@@ -1,17 +1,17 @@
 using System;
-using System.Runtime.CompilerServices;
 
 class Program
 {
     static void Main(string[] args)
     {
-       Journal journal = new Journal();
-       PromptGenerator promptGenerator = new PromptGenerator();
-       bool exitApp = false; //Controls the loop
-       string choice; // Stores the user's choice
+        bool exitApp = false;
+        string choice;
 
-       while (!exitApp)
-       {
+        Journal journal = new Journal();
+        PromptGenerator promptGenerator = new PromptGenerator();
+                
+        while (!exitApp)
+        {
             //Dispaly the menu
             Console.WriteLine("Journal Menu");
             Console.WriteLine("1. Write a new entry.");
@@ -20,7 +20,6 @@ class Program
             Console.WriteLine("4.Load the Journal from a file");
             Console.WriteLine("0.Quit");
             Console.WriteLine("What would you like to do?");
-
             choice = Console.ReadLine(); // Read user input
 
             // Handle user choice
@@ -39,6 +38,7 @@ class Program
                         _promptText = prompt,
                         _entryText = response
                     };
+
                     journal.AddEntry(newEntry);
                     Console.WriteLine("Entry added successfully!\n");
                     break;
@@ -46,7 +46,6 @@ class Program
                 case "2":
                     Console.WriteLine($"Your choice is: {choice}.Display the Journal.");
                     journal.DisplayAll();
-                    // Add logic for displaying the journal
                     break;
 
                 case "3":
@@ -54,7 +53,6 @@ class Program
                     string saveFile = Console.ReadLine();
                     journal.SaveToFile(saveFile);
                     Console.WriteLine("Journal saved successfully!\n");
-                    // Add logic for saving the Journal
                     break;
 
                 case "4":
@@ -62,7 +60,6 @@ class Program
                     string loadFile = Console.ReadLine();
                     journal.LoadFromFile(loadFile);
                     Console.WriteLine("Journal loaded successfully!\n");
-                    // Add logic for loading the Journal
                     break;
 
                 case "0":
@@ -71,12 +68,10 @@ class Program
                     break;
                 default:
                     Console.WriteLine("Invalid choice try again."); // Handle invalid input
-                    break;  
+                    break;
             }
         }
 
         Console.WriteLine("Aplication has exited.");
-        
     }
-
 }

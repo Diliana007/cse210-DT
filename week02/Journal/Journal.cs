@@ -10,6 +10,11 @@ public class Journal
     }
     public void DisplayAll()
     {
+        if (_entries.Count ==0)
+        {
+        Console.WriteLine("The Journal is empty. No entry to display.");
+        return;
+        }
         foreach (Entry entry in _entries)
         {
             entry.Display();
