@@ -27,11 +27,12 @@ class Program
             switch (choice)
             {
                 case "1":
+                    Console.WriteLine($"Your choice is: {choice}. Write a new enty.");
                     string prompt = promptGenerator.GetRandomPrompt();
                     Console.WriteLine($"Prompt: {prompt}");
-                    Console.WriteLine($"Your choice is: {choice}. Write a new enty.");
+                    Console.WriteLine("Your response: ");               
                     string response = Console.ReadLine();
-                    string currentDate = DateTime.Now.ToString("MM/dd/yyyy");
+                    string currentDate = DateTime.Now.ToShortDateString();
                     // Add logic for writting a new entry
                     Entry newEntry = new Entry
                     {
@@ -45,12 +46,12 @@ class Program
                     break;
 
                 case "2":
-                    Console.WriteLine($"Your choice is: {choice}.Display the Journal.\n");
+                    Console.WriteLine("Your choice is: {choice}.Display the Journal.\n");
                     journal.DisplayAll();
                     break;
 
                 case "3":
-                    Console.WriteLine($"Your choice is: {choice}.Save the Journal to a file.");
+                    Console.WriteLine("Your choice is: {choice}.Save the Journal to a file.");
                     string saveFile = Console.ReadLine();
                     journal.SaveToFile(saveFile);
                     Console.WriteLine("Journal saved successfully!\n");
@@ -64,7 +65,7 @@ class Program
                     break;
 
                 case "0":
-                    Console.WriteLine($"Your choice is: {choice}.Exit.");
+                    Console.WriteLine("Your choice is: {choice}.Exit.");
                     exitApp = true; // Set exitApp to true to end the loop
                     break;
                 default:
