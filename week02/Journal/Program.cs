@@ -20,7 +20,8 @@ class Program
             Console.WriteLine("4.Load the Journal from a file");
             Console.WriteLine("0.Quit");
             Console.WriteLine("What would you like to do?");
-            choice = Console.ReadLine(); // Read user input
+            choice = Console.ReadLine().Trim(); // Read user input
+            
 
             // Handle user choice
             switch (choice)
