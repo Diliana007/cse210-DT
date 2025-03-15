@@ -20,7 +20,7 @@ class Program
             Console.WriteLine("4.Load the Journal from a file");
             Console.WriteLine("0.Quit");
             Console.WriteLine("What would you like to do?");
-            choice = Console.ReadLine().Trim(); // Read user input
+            choice = Console.ReadLine();// Read user input
             
 
             // Handle user choice
@@ -69,7 +69,7 @@ class Program
                     exitApp = true; // Set exitApp to true to end the loop
                     break;
                 default:
-                    Console.WriteLine("Invalid choice try again."); // Handle invalid input
+                    Console.WriteLine("Invalid choice, try again."); // Handle invalid input
                     break;
             }
         }
