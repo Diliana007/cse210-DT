@@ -45,7 +45,7 @@ class Program
                     break;
 
                 case "2":
-                    Console.WriteLine($"Your choice is: {choice}.Display the Journal.");
+                    Console.WriteLine($"Your choice is: {choice}.Display the Journal.\n");
                     journal.DisplayAll();
                     break;
 
