@@ -52,4 +52,3 @@ public class Fraction
         _bottom = bottom;
     }
 }
-)
