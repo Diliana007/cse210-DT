@@ -8,13 +8,8 @@ public class Journal
     {
         _entries.Add(newEntry);
     }
-    public void DisplayAll()
-    {
-        if (_entries.Count ==0)
-        {
-            Console.WriteLine("The Journal is empty. No entry to display.");
-            return;
-        }
+    public void DisplayAll();
+        
         foreach (Entry entry in _entries)
         {
             entry.Display();
