@@ -30,7 +30,7 @@ public class Fraction
 
     public int GetTop()
     {
-        return top;
+        return _top;
     }
 
     public void SetTop(int top)
@@ -50,5 +50,14 @@ public class Fraction
             throw new ArgumentException("Denominator cannot be zero. ");
         }
         _bottom = bottom;
+    }
+    public string GetFractionString()
+    {
+        return $"{_top}/{_bottom}";
+    }
+
+    public double GetDecimalValue()
+    {
+        return (double)_top / _bottom;
     }
 }

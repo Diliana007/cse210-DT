@@ -23,7 +23,7 @@ class Program
 
         fraction1.SetTop(2);
         fraction1.SetBottom(3);
-        Console.WriteLine(fraction1.GetFractionSrting());
+        Console.WriteLine(fraction1.GetFractionString());
         Console.WriteLine(fraction1.GetDecimalValue());    
     }
 
