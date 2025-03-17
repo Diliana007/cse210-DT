@@ -20,6 +20,10 @@ public class Fraction
 
     public Fraction(int top,int bottom)
     {
+        if(bottom == 0)
+        {
+            throw new ArgumentException("Denominator cannot be zero");
+        }
         _top = top;
         _bottom = bottom;
     }
@@ -32,5 +36,10 @@ public class Fraction
     public double GetDecimalValue()
     {
         return (double)_top / (double)_bottom;
+    }
+
+    public override string ToString()
+    {
+        return GetFractionString();
     }
 }
