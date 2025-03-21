@@ -9,7 +9,7 @@ class Program
 
        while (!scripture.IsCompletetelyHidden())
        {
-            Console.WriteLine(scripture.GetDysplayText());
+            Console.WriteLine(scripture.GetDisplayText());
             Console.WriteLine("\nPress Enter to hide words or type 'quit' to exit:");
 
             if (input.ToLower() == "quit")
