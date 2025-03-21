@@ -1,22 +1,23 @@
+
 public class Word
 {
     private string _text;
-    private bool _isHidden;
+    private bool _isHidden();
 
     public Word(string text)
     {
         _text = text;
-        _isHidden = false;
+        _isHidden() = false;
     }
 
     public void Hide()
     {
-        _isHidden = true;
+        _isHidden() = true;
     }
 
     public void Show()
     {
-        _isHidden = false;
+        _isHidden() = false;
     }
     public bool _IsHidden()
     {
@@ -25,6 +26,11 @@ public class Word
 
     public string GetDisplayText()
     {
-        return _isHidden ? new string('_', _text.Length) : _text;
+        return _isHidden() ? new string('_', _text.Length) : _text;
+    }
+
+    internal bool IsHidden()
+    {
+        throw new NotImplementedException();
     }
 }
