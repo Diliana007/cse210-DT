@@ -18,9 +18,9 @@ public class Word
     {
         _isHidden = false;
     }
-    public bool IsHidden()
+    public bool _IsHidden()
     {
-        return _IsHidden;
+        return _IsHidden();
     }
 
     public string GetDisplayText()

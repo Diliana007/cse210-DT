@@ -37,7 +37,7 @@ public class Scripture
     public string GetDisplayText()
     {
         string text = string.Join(" ", _words.Select(word => word.GetDisplayText()));
-        return $"{_reference.GetDisplayText()}: {text}";
+        return $"{_reference.GetDisplayText()}:{text}";
     }
 
     public bool IsCompletelyHidden()
