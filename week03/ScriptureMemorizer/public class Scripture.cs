@@ -50,3 +50,4 @@ public class Scripture
     return ((double)hiddenWords / totalWords) * 100; // Calculate percentage
     }
 }
+
