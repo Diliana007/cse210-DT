@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public class Scripture (Reference reference, string text)
+public class Scripture
 {
     private Reference _reference;
     private List<Word> _words;
@@ -18,7 +18,7 @@ public class Scripture (Reference reference, string text)
 
         while (hiddenCount < numberToHide)
         {
-            var visibleWords = _words.Where(word => !word.IsHidden).ToList();
+            var visibleWords = _words.Where(word => !word.IsHidden()).ToList();
 
             if (visibleWords.Count == 0)
             {
@@ -40,6 +40,13 @@ public class Scripture (Reference reference, string text)
 
     public bool IsCompletelyHidden()
     {
-        return _words.All(word => word.IsHidden);
+        return _words.All(word => word.IsHidden());
+    }
+
+    public double GetHiddenPercentage()
+    {
+    int totalWords = _words.Count;
+    int hiddenWords = _words.Count(word => word.IsHidden());
+    return ((double)hiddenWords / totalWords) * 100; // Calculate percentage
     }
 }

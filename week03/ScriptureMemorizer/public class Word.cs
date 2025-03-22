@@ -12,20 +12,20 @@ public class Word
 
     public void Hide()
     {
-        _isHidden() = true;
+        _isHidden = true;
     }
 
     public void Show()
     {
-        _isHidden() = false;
+        _isHidden = false;
     }
-    public bool _IsHidden()
+    public bool IsHidden()
     {
-        return _IsHidden();
+        return _isHidden;
     }
 
     public string GetDisplayText()
     {
-        return _isHidden() ? new string('_', _text.Length) : _text;
+        return _isHidden ? new string('_', _text.Length): _text;
     }
 }

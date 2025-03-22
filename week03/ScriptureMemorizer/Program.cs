@@ -8,21 +8,30 @@ class Program
        Scripture scripture = new Scripture(reference, "Trust in the Lord with all your heart and lean not on your own understanding");
 
        while (!scripture.IsCompletelyHidden())
-       {
+        {
+            while (!scripture.IsCompletelyHidden())
+        {
+            Console.Clear();
             Console.WriteLine(scripture.GetDisplayText());
-            Console.WriteLine("\nPress Enter to hide words or type 'quit' to exit:");
+            Console.WriteLine("\nEnter the number of words to hide or type 'quit' to exit:");
+
             string input = Console.ReadLine();
+            if (input.ToLower() == "quit") break;
 
-            if (input.ToLower() == "quit")
+            if (int.TryParse(input, out int numberToHide) && numberToHide > 0)
             {
-                break;
+                scripture.HideRandomWords(numberToHide); // Hides user-specified number of words
             }
+            else
+            {
+            Console.WriteLine("Invalid input. Please enter a positive number.");
+        }
+}
 
-            scripture.HideRandomWords(2); // Hide two random words per turn
-       }
+        }
 
        Console.WriteLine("\nProgram Ended. Final Scripture:");
        Console.WriteLine(scripture.GetDisplayText());
-
+       Console.WriteLine($"Progress: {scripture.GetHiddenPercentage():F2}% of words hidden\n");
+        }
     }
-}
