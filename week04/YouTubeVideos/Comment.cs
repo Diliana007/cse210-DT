@@ -1,11 +1,11 @@
 public class Comment
 {
-    public string CommenterName{get;set;}
-    public string Text{get;set}
+    public string Name { get;set; }
+    public string Text { get;set; }
 
-    public Comment(string name,string text)
+    public Comment(string name, string text)
     {
-        CommenterName = name;
+        Name = name;
         Text = text;
     }
 }

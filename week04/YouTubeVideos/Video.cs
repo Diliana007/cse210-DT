@@ -2,16 +2,16 @@ using System.Collections.Generic;
 
 public class Video
 {
-    public string Title{get;set}
-    public string Author{get;set}
-    public int Length{get;set;}
-    private List<Comment>_comments=new List<Comment>();
+    public string Title { get;set; }
+    public string Author { get;set; }
+    public int Length { get;set; } //in seconds
+    private List<Comment> _comments = new List<Comment>();
 
-    public Video(string title,string author, int lenght)
+    public Video(string title,string author, int length)
     {
         Title = title;
         Author = author;
-        Length = Length; 
+        Length = length; 
     }
 
     public void AddComment(Comment comment)
@@ -25,10 +25,10 @@ public class Video
         return _comments.Count;
     }
 
-    public List<Comment>GetComment()
+    public List<Comment> GetComments()
 
     {
-        return_comments;
+        return _comments;
     }
 }
 
