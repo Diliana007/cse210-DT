@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 public class Customer
 {
     private string _name;
@@ -9,7 +11,18 @@ public class Customer
         _address = address;
     }
 
-    public string GetName() => _name;
-    public Address GetAddress() => _address;
-    public bool IsInUSA() => _address.IsInUSA();
+    public bool IsInUSA()
+    {
+        return _address.IsInUSA();
+    }
+
+    public string GetName()
+    {
+        return _name;
+    }
+
+    public string GetShippingAddress()
+    {
+        return _address.GetFullAddress();
+    }
 }

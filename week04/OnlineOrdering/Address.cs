@@ -1,4 +1,5 @@
-
+using System;
+using System.Collections.Generic;
 public class Address
 {
     private string _streetAddress;
@@ -14,8 +15,13 @@ public class Address
         _country = country;
     }
 
-    public bool IsInUSA() => _country == "USA";
-
-    public string GetFullAddress() =>
-        $"{_streetAddress}\n{_city}, {_stateProvince}\n{_country}";
+    public bool IsInUSA()
+    {
+        return _country.Equals("USA", StringComparison.OrdinalIgnoreCase);
+    } 
+    public string GetFullAddress()
+    {
+        return  $"{_streetAddress}\n{_city}, {_stateProvince}\n{_country}";
+    }
+       
 }
