@@ -28,6 +28,9 @@ class Program
                 case "2":
                     activity=new ReflectionActivity();
                     break;
+                case  "3":
+                    activity=new ListingActivity();
+                    break;
                 case "4":
                     return;
                 default:
@@ -66,7 +69,6 @@ abstract class Activity
     }
 
     protected void PrepareToBegin()
-
     {
         Console.WriteLine("Prepare to begin...");
         ShowSpinner(3);
@@ -91,17 +93,14 @@ abstract class Activity
     }
 
     protected void ShowCountdown(int seconds)
-
     {
         for (int i = seconds; i > 0; i--)
         {
             Console.Write($"{i} ");
             Thread.Sleep(1000);
-        }
-        
+        } 
         Console.WriteLine();
     }
-
     protected abstract void PerformActivity();
 
 }
@@ -123,7 +122,9 @@ class BreathingActivity : Activity
         {
             Console.WriteLine("Breath in...");
             ShowCountdown(4);
-            remainingTime -= 4;
+            Console.WriteLine("Breath out...");
+            ShowCountdown(4);
+            remainingTime -= 8;
         }
     }
 }
@@ -131,17 +132,14 @@ class BreathingActivity : Activity
 class ReflectionActivity : Activity
 {
     private List<string>prompts = new List<string>
-
     {
         "Think of a time when you stood up for someone else.",
         "Think of a time when you did something really difficult.",
         "Think of a time when you helped someone in need.",
-        "Think of a time when you did something truly selfless."
-        
+        "Think of a time when you did something truly selfless."   
     };
 
     private List<string> questions = new List<string>
-
     {
         "Why was this experience meaninful to you?",
         "Have you ever done anything like this before?",
@@ -211,6 +209,7 @@ class ListingActivity : Activity
         ShowCountdown(5);
 
         List<string> items = new List<string>();
+        DateTime endTime = DateTime.Now.AddSeconds(duration);
         while(DateTime.Now < endTime)
         {
             Console.Write(">");
