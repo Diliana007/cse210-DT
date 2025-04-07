@@ -174,7 +174,7 @@ class ReflectionActivity : Activity
 
         {
             string question = questions[random.Next(questions.Count)];
-            Console.WriteLine(questions);
+            Console.WriteLine(question);
             ShowSpinner(5);
         }
 
