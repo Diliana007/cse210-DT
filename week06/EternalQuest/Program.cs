@@ -1,9 +1,30 @@
+//Exceed requirements by leveling system, achivements and badges and visual feedback
 using System;
 
-class Program
+namespace EternalQuest
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello World! This is the EternalQuest Project.");
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Welcome to the Eternal Quest Program!");
+            Console.WriteLine("This program helps you track and achieve your personal goals.");
+
+            try
+            {
+                GoalManager manager = new GoalManager();
+                manager.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+            finally
+            {
+                Console.WriteLine("Thank you for using Eternal Quest. Goodbye!");
+                Console.WriteLine("Press Enter to continue...");
+                Console.ReadLine();
+            }
+        }
     }
 }
